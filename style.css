@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700;900&display=swap');
+
+:root{
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Fraunces , Montserrat ,sans-serif;
+    font-size: 16px;
+    background-color: var(--Cream);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--White);
+}
+.left{
+    flex: 50%;
+    background-image: url(images/image-product-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+.right{
+    flex: 50%;
+    padding: 20px;
+}
+.title{
+    text-transform: uppercase;
+    color: var(--Dark-grayish-blue);
+    font-family: Montserrat;
+    font-size: 0.7em;
+    letter-spacing: 3px;
+}
+h1{
+    padding: 10px 0;
+    line-height: 0.9em;
+    color: var(--Very-dark-blue);
+}
+p{
+    color: var(--Dark-grayish-blue);
+    margin: 10px 0 30px 0;
+}
+.current-price{
+    color: var(--Dark-cyan);
+    font-size: 2em;
+    margin-left: 3px;
+}
+.price{
+    position: relative;
+}
+.old-price{
+    color: var(--Dark-grayish-blue);
+    text-decoration:line-through ;
+    margin-left: 30px;
+    font-size: 0.8em;
+}
+.price img{
+    position: absolute;
+    top: -10px; left: 75%;
+    visibility: hidden;
+    width: 80px;
+    border-radius: 8px;
+}
+button{
+    background-color: var(--Dark-cyan);
+    color: var(--White);
+    font-size: 1.1em;
+    border-style: none;
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s;
+}
+button:hover{
+    background-color: var(--Very-dark-blue);
+}
+.btn{
+    position: relative;
+}
+button img{
+    position: absolute;
+    top: 10px; left: 10px;
+    transition: 0.5s;
+}
+button:hover img{
+    top: 10px; left: 45px;
+}
+button:hover{
+    padding-left: 12px;
+}
+@media (max-width: 500px) {
+    .container {
+      flex: 100%;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 0;
+      padding-bottom: 100vh;
+      padding-top: 30px;
+      background-color: var(--Cream);
+    }
+    .price img{
+        visibility: visible;
+        cursor: pointer;
+    }
+  }
